@@ -1,26 +1,24 @@
-def repeatSentence(sentence, number)
-  number.times {
-    puts sentence
-  }
-end
-
 def start()
-  puts "Salut, donnes un chiffre ?"
+  puts "Quelle est ton année de naissance ?"
   print ">"
   begin
-    number = Integer(gets.chomp)
+    year_of_birth = Integer(gets.chomp)
   rescue
-    puts "Ce n'est pas un chiffre entier"
+    puts "Ce n'est pas un nombre entier pouvant correspondre à une année"
     start()
   end
-  if number.to_i >= 10
-    puts "Ce n'est pas un chiffre, c'est un nombre !"
-    start()
-  elsif number.to_i <= 0
-    puts "On t'a demandé un chiffre, là tu es parti dans les chiffres négatifs !"
-    start()
-  else
-    repeatSentence("Salut ça farte ?", number.to_i)
+  if year_of_birth
+    puts "En " + year_of_birth.to_s + ", tu débarquais dans ce monde."
+    i = 0
+    while year_of_birth + i < Time.now.year - 1
+      i = i + 1
+      year = year_of_birth + i
+      age = year - year_of_birth
+      many_years = Time.now.year - year
+      puts "Il y a " + many_years.to_s + " ans, tu avais " + age.to_s + " ans."
+    end
+      age = Time.now.year - year_of_birth
+      puts "Cette année, " + "tu as " + age.to_s + " ans."
   end
 end
 

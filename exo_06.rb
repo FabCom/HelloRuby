@@ -1,9 +1,27 @@
-number_of_hours_worked_per_day = 10
-number_of_days_worked_per_week = 5
-number_of_weeks_in_THP = 11
+def repeatSentence(sentence, number)
+  number = number - 1
+  number.times {
+    puts sentence
+  }
+end
 
-puts "Travail : #{number_of_hours_worked_per_day * number_of_days_worked_per_week * number_of_weeks_in_THP}"
+def start()
+  puts "Salut, donnes un nombre ?"
+  print ">"
+  begin
+    number = Integer(gets.chomp)
+  rescue
+    puts "Ce n'est pas un nombre"
+    start()
+  end
+  if number
+    if number.to_i <= 0
+      puts "Tu peux donner un nombre positif s'il-te-plaît !"
+      start()
+    else
+      repeatSentence("Bonjour toi !", number.to_i)
+    end
+  end
+end
 
-puts "Et en minutes ça fait : #{number_of_minutes_in_an_hour * number_of_hours_worked_per_day * number_of_days_worked_per_week * number_of_weeks_in_THP}"
-
-# Il y a une erreur parcequ'une des variable n'est pas définie : number_of_minutes_in_an_hour
+start()

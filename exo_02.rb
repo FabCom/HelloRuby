@@ -1,2 +1,4 @@
-puts "Bonjour, monde !"
-puts "Et avec une voix sexy, ça donne : Bonjour, monde !"
+puts "Bonjour, c'est quoi ton blase ?"
+print "> "
+user_name = gets.chomp
+puts "Salut " + user_name +" !"

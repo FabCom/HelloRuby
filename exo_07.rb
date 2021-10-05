@@ -1,9 +1,8 @@
-def countdown(number)
-  puts number
+def count(number)
   number.times do |i|
     i = i + 1
-    if number - i >= 0
-      puts number - i
+    if i <= number
+      puts i
     end
   end
 end
@@ -22,7 +21,7 @@ def start()
       puts "Tu peux donner un nombre positif s'il-te-plaît !"
       start()
     else
-      countdown(number.to_i)
+      count(number.to_i)
     end
   end
 end
