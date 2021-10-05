@@ -5,7 +5,7 @@ def start()
   begin
     stages = Integer(gets.chomp)
   rescue
-    puts "Il faut que tu renseigne un nombre."
+    puts "Il faut que tu renseignes un nombre."
   end
   if stages
     if stages < 0
