@@ -14,7 +14,7 @@ def start()
   begin
     year = Integer(gets.chomp)
   rescue
-    puts "Ce n'est pas un nombre entier pouvant correspondre à une année"
+    puts "Ce n'est pas un nombre entier pouvant correspondre à une année !"
     start()
   end
   if year
@@ -24,3 +24,5 @@ def start()
 end
 
 start()
+
+#Test
